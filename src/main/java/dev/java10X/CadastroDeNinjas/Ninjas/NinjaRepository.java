@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface NinjaRepository extends JpaRepository<NinjaModel, Long> {
     @Override
     List<NinjaModel> findAll();
-    @Override
+
     Optional<NinjaModel> findById(Long id);
 
     @Override

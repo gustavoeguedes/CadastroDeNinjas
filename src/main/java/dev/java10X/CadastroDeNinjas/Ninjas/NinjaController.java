@@ -24,14 +24,14 @@ public class NinjaController {
         return "Ninja Criada";
     }
 
-    @GetMapping("todosNinjas")
+    @GetMapping("/listar")
     public List<NinjaModel> listarNinjas() {
         return ninjaService.listarNinjas();
     }
 
-    @GetMapping("por-id")
-    public String porId() {
-        return "Por Id";
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjasPorId(@PathVariable Long id) {
+        return ninjaService.findById(id);
     }
 
     @PutMapping("alterar-id")
