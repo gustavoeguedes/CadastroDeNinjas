@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
 
     private final NinjaService ninjaService;
@@ -20,8 +20,8 @@ public class NinjaController {
     }
 
     @PostMapping("/criar")
-    public String criarNinja() {
-        return "Ninja Criada";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja) {
+        return ninjaService.criarNinja(ninja);
     }
 
     @GetMapping("/listar")
